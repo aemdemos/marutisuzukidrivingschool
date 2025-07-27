@@ -420,7 +420,8 @@
       "url": "https://www.marutisuzukidrivingschool.com/outletlocator/driving-school-in-amravati",
       "source": "SITEMAPS",
       "targetPath": "/outletlocator/driving-school-in-amravati",
-      "id": "c5764e7182fdab4cc5b4ac8209f7452099eb3fd1"
+      "id": "c5764e7182fdab4cc5b4ac8209f7452099eb3fd1",
+      "status":"Excluded"
     },
     {
       "url": "https://www.marutisuzukidrivingschool.com/outletlocator/driving-school-in-amritsar",
