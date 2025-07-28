@@ -26,17 +26,145 @@
   display: block;
 }
 
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
+.columns.columns4 {
+  background: #171795;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 80px;
+}
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
+.columns.columns4 > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns4 > div > div {
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns4 > div > div > p {
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns4 > div:nth-child(2) {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 6px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.columns.columns4 > div:nth-child(2) p,
+.columns.columns4 > div:nth-child(2) span {
+  color: #c8c8c8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.columns.columns4 > div:nth-child(3) {
+  display: none;
+}
+
+.columns.columns4 > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.columns.columns4 > div:first-child > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  min-width: 300px;
+  flex: 0 0 auto;
+}
+
+.columns.columns4 > div:first-child > div:first-child h4 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 8px 0 0;
+  padding: 0;
+  line-height: 38px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.columns.columns4 > div:first-child > div:first-child p {
+  margin: 0;
+  padding: 0 12px;
+}
+
+.columns.columns4 > div:first-child > div > p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  color: #171795;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  height: 38px;
+  line-height: 38px;
+  min-width: 128px;
+  max-width: 170px;
+  width: 148px;
+  box-sizing: border-box;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  box-shadow: none;
+  padding: 0 12px;
+}
+
+.columns.columns4 > div:first-child > div:not(:first-child) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.columns.columns4 > div:first-child > div:last-child > p:last-child {
+  font-weight: 700;
+  min-width: 120px;
+  max-width: 140px;
+  width: 130px;
+  background: #fff;
+  color: #171795;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 0 1px #fff;
 }
 
 .columns.columns3 > div {
@@ -59,7 +187,6 @@
   align-items: flex-start;
 }
 
-/* Main (left) column: wider for main content */
 .columns.columns3 > div > div:nth-child(1) {
   flex: 0 1 63%;
   max-width: 63%;
@@ -67,14 +194,12 @@
   padding-right: 14px;
 }
 
-/* Middle column: slightly narrower */
 .columns.columns3 > div > div:nth-child(2) {
   flex: 0 1 24%;
   max-width: 24%;
   padding-right: 10px;
 }
 
-/* Right column: wider and min width for natural wraps */
 .columns.columns3 > div > div:nth-child(3) {
   flex: 0 1 13%;
   max-width: 16%;
@@ -87,12 +212,10 @@
     flex-basis: 60%;
     max-width: 60%;
   }
-
   .columns.columns3 > div > div:nth-child(2) {
     flex-basis: 27%;
     max-width: 27%;
   }
-
   .columns.columns3 > div > div:nth-child(3) {
     flex-basis: 13%;
     max-width: 18%;
@@ -105,11 +228,34 @@
     flex-direction: column;
     gap: 0;
   }
-
   .columns.columns3 > div > div {
     max-width: 100%;
     flex: 1 1 100%;
     padding-right: 0;
     margin-bottom: 24px;
+  }
+  .columns.columns4 {
+    padding: 0 8px 12px;
+    min-height: 0;
+  }
+  .columns.columns4 > div:first-child {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .columns.columns4 > div:first-child > div,
+  .columns.columns4 > div:first-child > div:last-child {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .columns.columns4 > div:first-child > div > p,
+  .columns.columns4 > div:first-child > div:last-child > p {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .columns.columns4 > div:nth-child(2) {
+    margin-top: 10px;
   }
 }
