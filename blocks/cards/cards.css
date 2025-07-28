@@ -953,8 +953,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  /* Force even row heights */
   grid-auto-rows: 1fr;
 }
 
@@ -1012,7 +1010,6 @@
   display: block;
 }
 
-/* Card body: more compact, tighter */
 .cards.cards35 .cards-card-body {
   flex: 1 1 auto;
   display: flex;
@@ -1023,7 +1020,6 @@
   box-sizing: border-box;
 }
 
-/* Headline: bold, blue, tight */
 .cards.cards35 .cards-card-body h3,
 .cards.cards35 .cards-card-body h4 {
   font-size: 16px;
@@ -1035,7 +1031,6 @@
   word-break: break-word;
 }
 
-/* Summary: smaller, tight */
 .cards.cards35 .cards-card-body > p:not(.button-container) {
   font-size: 13px;
   line-height: 1.32;
@@ -1046,7 +1041,6 @@
   word-break: break-word;
 }
 
-/* CTA: uppercase, bold, left-aligned, tight to summary */
 .cards.cards35 .cards-card-body .button-container {
   margin-top: 0;
   padding: 0;
@@ -1094,4 +1088,161 @@
 
 .cards.cards35 {
   width: 100%;
+}
+
+
+.cards.cards36 {
+  background: #f8f8f8;
+  padding: 0;
+}
+
+/* Row layout for horizontal card carousel */
+.cards.cards36 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0 12px 14px;
+  min-height: 1px;
+  align-items: stretch;
+  scroll-behavior: smooth;
+}
+
+/* Compact, uniform cards */
+.cards.cards36 > ul > li {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  min-width: 228px;
+  max-width: 240px;
+  width: 232px;
+  min-height: 235px;
+  box-sizing: border-box;
+  padding: 12px 12px 10px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 4.8%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-shrink: 0;
+  transition: box-shadow 0.16s, border-color 0.16s;
+  position: relative;
+}
+
+/* All cards same height in a row */
+.cards.cards36 > ul {
+  align-items: stretch;
+}
+
+/* Highlight featured card */
+.cards.cards36 > ul > li:nth-child(3) {
+  border: 2px solid #264DB5;
+  box-shadow: 0 4px 10px rgb(38 77 181 / 7%);
+  z-index: 1;
+}
+
+/* Card body: tight stacking, minimal gap */
+.cards.cards36 .cards-card-body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+}
+
+/* Image: compact, centered, with aspect ratio */
+.cards.cards36 .cards-card-image {
+  width: 100%;
+  margin-bottom: 6px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cards.cards36 .cards-card-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  aspect-ratio: 4/3;
+  max-height: 62px;
+  min-height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Heading and quote: smaller, blue, less margin */
+.cards.cards36 .cards-card-body h3 {
+  color: #264DB5;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 1px;
+  line-height: 16px;
+}
+
+.cards.cards36 .cards-card-body h4 {
+  color: #264DB5;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 1px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+}
+
+/* Testimonial text: compact, no excess margin */
+.cards.cards36 .cards-card-body p {
+  font-size: 12px;
+  line-height: 15px;
+  color: #212529;
+  margin: 0 0 1px;
+  padding: 0;
+  word-break: break-word;
+}
+
+/* Author: blue, bold, last */
+.cards.cards36 .cards-card-body p > strong {
+  color: #264DB5;
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  margin: 1px 0 0;
+}
+
+/* Last p as location/secondary: grey if present */
+.cards.cards36 .cards-card-body p:last-child:not(:only-child, :has(strong)) {
+  color: #868e96;
+  font-size: 11px;
+  margin: 0;
+}
+
+/* Remove any blue divider/bar */
+.cards.cards36 .testimonial-divider,
+.cards.cards36 .blue-bar {
+  display: none;
+}
+
+/* Responsive tweaks: cards narrower and text smaller on mobile */
+@media (width <= 900px) {
+  .cards.cards36 > ul > li {
+    min-width: 128px;
+    max-width: 65vw;
+    width: 52vw;
+    min-height: 120px;
+    padding: 5px 4px 4px;
+  }
+
+  .cards.cards36 > ul {
+    gap: 4px;
+    padding-bottom: 2px;
+  }
+
+  .cards.cards36 .cards-card-body h3,
+  .cards.cards36 .cards-card-body h4,
+  .cards.cards36 .cards-card-body p {
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
