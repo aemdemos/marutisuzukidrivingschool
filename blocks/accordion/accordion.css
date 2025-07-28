@@ -20,6 +20,34 @@
   transition: background-color 0.2s;
 }
 
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion13 summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 64px 20px;
+  min-height: 48px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  gap: 18px;
+  line-height: 1.6;
+  position: relative;
+  margin-bottom: 10px;
+  padding-right: 64px;
+}
+
+.accordion.accordion13 summary::-webkit-details-marker,
+.accordion.accordion13 summary::marker {
+  display: none;
+}
+
 .accordion details[open] summary {
   background-color: var(--light-color);
 }
@@ -27,10 +55,6 @@
 .accordion details summary:focus,
 .accordion details summary:hover {
   background-color: var(--light-color);
-}
-
-.accordion details summary::-webkit-details-marker {
-  display: none;
 }
 
 .accordion details summary::after {
@@ -72,7 +96,6 @@
   padding: 0;
 }
 
-/* FAQ summary/question row */
 .accordion.accordion10 details summary,
 .accordion.accordion10 .accordion-item-label {
   display: flex;
@@ -93,13 +116,11 @@
   appearance: none;
 }
 
-/* Remove default chevron/marker */
 .accordion.accordion10 details summary::-webkit-details-marker,
 .accordion.accordion10 details summary::marker {
   display: none;
 }
 
-/* Question typography */
 .accordion.accordion10 details summary p,
 .accordion.accordion10 .accordion-item-label p {
   color: #0070c0;
@@ -117,7 +138,6 @@
   white-space: normal;
 }
 
-/* Flat minus icon on the right (not a chevron) */
 .accordion.accordion10 details summary::after {
   display: inline-block;
   vertical-align: top;
@@ -129,12 +149,9 @@
   border-radius: 1px;
   align-self: flex-start;
   flex-shrink: 0;
-
-  /* No content property, just visual line */
   content: "";
 }
 
-/* Answer/body area */
 .accordion.accordion10 .accordion-item-body {
   color: #222;
   font-size: 14px;
@@ -145,6 +162,25 @@
   box-sizing: border-box;
   border: none;
   margin: 0;
+}
+
+.accordion.accordion13 .accordion-item-label p {
+  font-size: 16px;
+  font-weight: 800;
+  color: #222a74;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.accordion.accordion13 .accordion-item-body {
+  padding: 0 64px 28px;
+  background: #fff;
 }
 
 .accordion details[open] .accordion-item-body {
@@ -159,7 +195,67 @@
   transition: color 0.2s;
 }
 
-/* Responsive adjustments */
+.accordion.accordion13 {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(34 42 116 / 6%);
+  padding: 0;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Each accordion item: add more space between question and border */
+.accordion.accordion13 .accordion-item {
+  border-bottom: 3px solid #222a74;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* details resets */
+.accordion.accordion13 details {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.accordion.accordion13 details + details {
+  margin-top: 0;
+}
+
+.accordion.accordion13 summary svg,
+.accordion.accordion13 summary i,
+.accordion.accordion13 summary span {
+  color: #222a74;
+  font-size: 26px;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.accordion.accordion13 .accordion-item-body p,
+.accordion.accordion13 .accordion-item-body ul,
+.accordion.accordion13 .accordion-item-body li {
+  color: #222;
+  font-size: 15px;
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+.accordion.accordion13 .accordion-item-body ul {
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.accordion.accordion13 .accordion-item-body li {
+  list-style: disc;
+  margin-bottom: 4px;
+}
+
 @media (width <= 600px) {
   .accordion.accordion10 details summary,
   .accordion.accordion10 .accordion-item-label {
@@ -189,7 +285,21 @@
   }
 }
 
-/* Remove summary background highlight on open */
+@media (width <= 700px) {
+  .accordion.accordion13 summary,
+  .accordion.accordion13 .accordion-item-body {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (width >= 900px) {
+  .accordion.accordion13 {
+    margin-left: 56px;
+    margin-right: 56px;
+  }
+}
+
 .accordion.accordion10 details[open] summary {
   background: transparent;
 }
