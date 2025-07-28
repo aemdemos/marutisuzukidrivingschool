@@ -45,3 +45,137 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero6 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgb(23 28 143 / 6%);
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 48px;
+  min-height: 340px;
+}
+
+.hero.hero6 > div:first-child {
+  flex: 1 1 46%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 320px;
+  max-width: 520px;
+  background: #e4e7ef;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero.hero6 > div:last-child {
+  flex: 1 1 54%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 600px;
+  margin-left: 0;
+  padding-top: 6px;
+}
+
+.hero.hero6 > div:first-child > div {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.hero.hero6 picture,
+.hero.hero6 img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  aspect-ratio: 2.45/1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  background: #e4e7ef;
+  box-shadow: 0 2px 8px rgb(23 28 143 / 8%);
+}
+
+.hero.hero6 h1 {
+  color: #171c8f;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 18px;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+}
+
+.hero.hero6 p,
+.hero.hero6 ul,
+.hero.hero6 ol {
+  color: #222;
+  font-size: 1rem;
+  margin-bottom: 0.9em;
+  line-height: 1.6;
+}
+
+.hero.hero6 strong {
+  color: #131313;
+  font-weight: 700;
+}
+
+@media (width <= 1020px) {
+  .hero.hero6 {
+    padding: 28px 6vw;
+    gap: 24px;
+  }
+
+  .hero.hero6 > div:first-child {
+    min-width: 0;
+    max-width: 400px;
+  }
+
+  .hero.hero6 > div:last-child {
+    max-width: 100%;
+  }
+}
+
+@media (width <= 700px) {
+  .hero.hero6 {
+    flex-direction: column;
+    gap: 20px;
+    padding: 14px 2vw;
+    min-height: unset;
+  }
+
+  .hero.hero6 > div:first-child,
+  .hero.hero6 > div:last-child {
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .hero.hero6 > div:first-child {
+    min-height: 140px;
+    border-radius: 10px;
+  }
+
+  .hero.hero6 picture,
+  .hero.hero6 img {
+    min-height: 140px;
+    border-radius: 10px;
+    aspect-ratio: 16/7;
+  }
+}
+
+.hero.hero6 *,
+.hero.hero6 img {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
