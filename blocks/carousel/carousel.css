@@ -149,7 +149,6 @@
 
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
-
     margin: 92px;
   }
 
@@ -191,4 +190,272 @@
   text-align: right;
   max-width: 40vw;
   box-sizing: border-box;
+}
+
+.carousel.carousel39 .carousel-slides {
+  gap: 20px;
+  padding: 32px 0 20px;
+  align-items: flex-start;
+}
+
+/* Card shape, spacing, and shadow */
+.carousel.carousel39 .carousel-slide {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgb(40 40 80 / 10%);
+  border: 1px solid #ececf2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 260px;
+  min-width: 220px;
+  max-width: 280px;
+  height: 350px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.18s;
+}
+
+/* Card image: keep at top, correct aspect, no white gap */
+.carousel.carousel39 .carousel-slide .carousel-slide-image {
+  width: 100%;
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+  margin: 0;
+  background: #eaeaf2;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.carousel.carousel39 .carousel-slide .carousel-slide-image picture,
+.carousel.carousel39 .carousel-slide .carousel-slide-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Remove extra space above/below images */
+.carousel.carousel39 .carousel-slide .carousel-slide-content {
+  background: transparent;
+  padding: 14px 16px 12px;
+  margin: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: static;
+  box-sizing: border-box;
+  min-height: 110px;
+}
+
+/* Headline: blue, compact, upper part of content */
+.carousel.carousel39 .carousel-slide h3 {
+  color: #1c2f6a;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  margin: 0 0 7px;
+  padding: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Summary: allow wrapping, no truncation, ~3 lines max, readable */
+.carousel.carousel39 .carousel-slide p {
+  color: #36394a;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0 0 7px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 54px; /* allow ~3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* "Read more": inline, blue, arrow via border, spacing */
+.carousel.carousel39 .carousel-slide .button-container {
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  display: block;
+  width: 100%;
+}
+
+.carousel.carousel39 .carousel-slide .button-container .button {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #155fd4;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 2px 0 0;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-decoration: underline;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.carousel.carousel39 .carousel-slide .button-container .button::after {
+  display: inline-block;
+  border: solid #155fd4;
+  border-width: 0 2px 2px 0;
+  padding: 2.5px;
+  margin-left: 6px;
+  vertical-align: middle;
+  transform: rotate(-45deg);
+  width: 6px;
+  height: 6px;
+  content: "";
+}
+
+.carousel.carousel39 .carousel-slide .button-container .button:hover,
+.carousel.carousel39 .carousel-slide .button-container .button:focus {
+  color: #0d438e;
+  text-decoration: underline;
+}
+
+.carousel.carousel39 .carousel-slide .button-container .button:hover::after,
+.carousel.carousel39 .carousel-slide .button-container .button:focus::after {
+  border-color: #0d438e;
+}
+
+/* Navigation arrows: keep outside card row, vertically centered */
+.carousel.carousel39 .carousel-navigation-buttons {
+  left: -36px;
+  right: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel.carousel39 .carousel-navigation-buttons button {
+  pointer-events: auto;
+  background: #f5f5fa;
+  border: none;
+  box-shadow: 0 2px 8px rgb(32 32 32 / 9%);
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel.carousel39 .carousel-navigation-buttons button::after {
+  border: solid #1c2f6a;
+  border-width: 0 0 2px 2px;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: none;
+  box-shadow: none;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  content: "";
+}
+
+.carousel.carousel39 .carousel-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+/* Indicators: visible, centered, subtle at bottom */
+.carousel.carousel39 .carousel-slide-indicators {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  z-index: 6;
+}
+
+.carousel.carousel39 .carousel-slide-indicator button {
+  width: 7px;
+  height: 7px;
+  background: #b7b8c7;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  transition: background 0.18s;
+  display: inline-block;
+}
+
+.carousel.carousel39 .carousel-slide-indicator button:disabled,
+.carousel.carousel39 .carousel-slide-indicator button[aria-current="true"] {
+  background: #1c2f6a;
+}
+
+.carousel.carousel39 .carousel-slide-indicator button:hover,
+.carousel.carousel39 .carousel-slide-indicator button:focus-visible {
+  background: #1c2f6a;
+}
+
+/* Responsive: cards per row */
+@media (width <= 1200px) {
+  .carousel.carousel39 .carousel-slide {
+    width: 210px;
+  }
+
+  .carousel.carousel39 .carousel-slides {
+    gap: 10px;
+  }
+}
+
+@media (width <= 900px) {
+  .carousel.carousel39 .carousel-slide {
+    width: 45vw;
+    min-width: 150px;
+    max-width: 280px;
+  }
+
+  .carousel.carousel39 .carousel-slides {
+    gap: 8px;
+  }
+}
+
+@media (width <= 600px) {
+  .carousel.carousel39 .carousel-slide {
+    width: 92vw;
+    min-width: 120px;
+  }
+
+  .carousel.carousel39 .carousel-slides {
+    gap: 6px;
+  }
 }
