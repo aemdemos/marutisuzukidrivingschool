@@ -474,3 +474,123 @@
   border-radius: 0;
   line-height: 1.2;
 }
+
+
+.cards.cards19 {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgb(30 41 59 / 10%);
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 1200px;
+  overflow-x: visible;
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+/* Use grid at desktop to ensure all 4 cards are fully visible and evenly spaced */
+.cards.cards19 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Each card fills its grid column and stacks content top to bottom */
+.cards.cards19 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0 8px;
+  box-shadow: none;
+  min-width: 0;
+  min-height: 240px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  visibility: visible;
+}
+
+/* Icon at the top */
+.cards.cards19 .cards-card-image {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.cards.cards19 .cards-card-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+}
+
+/* Card body */
+.cards.cards19 .cards-card-body {
+  padding: 0;
+  width: 100%;
+}
+
+/* Heading */
+.cards.cards19 .cards-card-body h3 {
+  font-size: 15px;
+  color: #31449a;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  width: 100%;
+}
+
+/* Description */
+.cards.cards19 .cards-card-body p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #555;
+  margin: 0;
+  width: 100%;
+}
+
+/* Remove bullets from ul */
+.cards.cards19 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive: horizontal scroll on mobile, stack to flex row */
+@media (width <= 950px) {
+  .cards.cards19 > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .cards.cards19 > ul > li {
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    min-width: 220px;
+    padding: 0 8px;
+  }
+
+  .cards.cards19 {
+    padding: 20px 6px;
+    max-width: 100vw;
+    min-height: 0;
+  }
+}
