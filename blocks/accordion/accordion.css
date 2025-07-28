@@ -6,6 +6,13 @@
   margin-top: 24px;
 }
 
+.accordion.accordion21 details {
+  border: none;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
 .accordion details p {
   margin-bottom: 0.8em;
 }
@@ -204,7 +211,6 @@
   margin: 0 auto;
 }
 
-/* Each accordion item: add more space between question and border */
 .accordion.accordion13 .accordion-item {
   border-bottom: 3px solid #222a74;
   margin: 0;
@@ -212,7 +218,6 @@
   background: transparent;
 }
 
-/* details resets */
 .accordion.accordion13 details {
   border: none;
   margin: 0;
@@ -302,4 +307,66 @@
 
 .accordion.accordion10 details[open] summary {
   background: transparent;
+}
+
+.accordion.accordion21 {
+  background-color: #fff;
+  border: 1px solid rgb(0 0 0 / 12.5%);
+  border-radius: 4px;
+  box-shadow: 0 0 15px 0 rgb(223 223 223 / 90%);
+  width: 370px;
+  margin: 24px auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make summary bar a flex row and ensure children are visible and aligned */
+.accordion.accordion21 summary.accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  min-height: 44px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: var(--heading-font-family);
+  width: 100%;
+}
+
+/* Styling for marker: blue and larger */
+.accordion.accordion21 summary.accordion-item-label::-webkit-details-marker {
+  color: #1428A0;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.accordion.accordion21 summary.accordion-item-label::marker {
+  color: #1428A0;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* Heading text styles (ensure visible, left-aligned, bold, blue) */
+.accordion.accordion21 summary.accordion-item-label p {
+  color: #1428A0;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  display: block;
+}
+
+/* Responsive: Full width on small screens */
+@media (width <= 500px) {
+  .accordion.accordion21 {
+    width: 100%;
+    min-width: 0;
+  }
 }
