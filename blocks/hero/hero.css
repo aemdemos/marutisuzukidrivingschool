@@ -49,82 +49,99 @@
 .hero.hero6 {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: flex-start;
   max-width: 1200px;
   margin: 48px auto;
   background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgb(35 64 142 / 6%);
-  padding: 0;
-  min-height: 390px;
-  overflow: visible;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgb(35 64 142 / 7%);
+  overflow: hidden;
+  min-height: 385px;
+  gap: 0;
 }
 
-/* Left (image) column */
+/* Left column: always reserve image area width, show fallback bg if image not present */
 .hero.hero6 > div:first-child {
-  flex: 0 1 45%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 0 32px 32px;
+  flex: 0 0 56.5%;
+  max-width: 56.5%;
   min-width: 340px;
-  max-width: 48%;
-  box-sizing: border-box;
-  position: relative;
-
-  /* visual placeholder if image fails */
+  min-height: 260px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
   background: #e4e7ef;
+  position: relative;
 }
 
-/* Right (text) column */
 .hero.hero6 > div:last-child {
-  flex: 0 1 55%;
+  flex: 1 1 43.5%;
+  max-width: 43.5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-width: 0;
-  max-width: 56%;
-  padding: 40px 40px 40px 36px;
   box-sizing: border-box;
-}
-
-/* Ensure the inner image container fills height */
-.hero.hero6 > div:first-child > div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 40px 32px 36px 40px;
+  min-width: 0;
 }
 
 .hero.hero6 > div:last-child > div {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
   padding: 0;
 }
 
+.hero.hero6 > div:first-child > div:has(picture) {
+  background: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero.hero6 > div:first-child > div:empty {
+  min-width: 340px;
+  min-height: 220px;
+  background: #e4e7ef;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Make image fit area and preserve rounded corner */
+.hero.hero6 picture,
+.hero.hero6 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.44/1;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+  background: #e4e7ef;
+  box-shadow: none;
+}
+
 .hero.hero6 h1 {
-  color: #23408e;
+  color: #1b237e;
   font-size: 2.1rem;
   font-weight: 700;
-  line-height: 1.16;
-  margin: 0 0 20px;
+  line-height: 1.15;
+  margin: 0 0 18px;
   font-family: Roboto, sans-serif;
 }
 
 .hero.hero6 p {
-  color: #222;
-  font-size: 1.19rem;
-  line-height: 1.82;
-  margin: 0 0 1.6em;
+  color: #212121;
+  font-size: 1.09rem;
+  line-height: 1.7;
+  margin-bottom: 0.8em;
   font-family: Roboto, sans-serif;
 }
 
 .hero.hero6 strong {
-  color: #23408e;
+  color: #1b237e;
   font-weight: 700;
 }
 
@@ -134,78 +151,52 @@
 }
 
 .hero.hero6 a {
-  color: #23408e;
+  color: #1b237e;
   text-decoration: underline;
   transition: color 0.2s;
 }
 
 .hero.hero6 a:hover {
-  color: #1c326b;
+  color: #163086;
 }
 
-/* Image styles */
-.hero.hero6 picture,
-.hero.hero6 img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-height: 200px;
-  aspect-ratio: 2.45/1;
-  object-fit: cover;
-  border-radius: 6px;
-  background: #e4e7ef;
-  box-shadow: 0 2px 8px rgb(35 64 142 / 9%);
-}
-
-/* Responsive adjustments */
-@media (width <= 1150px) {
-  .hero.hero6 {
-    max-width: 99vw;
-  }
-
-  .hero.hero6 > div:first-child {
-    min-width: 240px;
-    padding-left: 16px;
-  }
-
-  .hero.hero6 > div:last-child {
-    padding-right: 16px;
-    padding-left: 22px;
-  }
-}
-
-@media (width <= 820px) {
+/* Responsive stacking for mobile */
+@media (width <= 950px) {
   .hero.hero6 {
     flex-direction: column;
-    max-width: 99vw;
+    max-width: 100vw;
+    margin: 24px 0;
+    border-radius: 0;
+    box-shadow: none;
     min-height: unset;
-    padding: 0;
   }
 
   .hero.hero6 > div:first-child,
   .hero.hero6 > div:last-child {
     max-width: 100%;
     min-width: 0;
-    padding: 18px 8px 0;
+    padding: 0;
+    border-radius: 0;
   }
 
   .hero.hero6 > div:last-child {
-    padding-bottom: 24px;
-    padding-top: 10px;
-  }
-
-  .hero.hero6 h1 {
-    font-size: 1.15rem;
-  }
-
-  .hero.hero6 p {
-    font-size: 1rem;
+    padding: 18px 8px 10px;
   }
 
   .hero.hero6 picture,
   .hero.hero6 img {
-    aspect-ratio: 16/7;
+    border-radius: 0;
+    max-height: 220px;
     min-height: 120px;
+    height: auto;
+    aspect-ratio: 16/7;
+  }
+
+  .hero.hero6 h1 {
+    font-size: 1.13rem;
+  }
+
+  .hero.hero6 p {
+    font-size: 1rem;
   }
 }
