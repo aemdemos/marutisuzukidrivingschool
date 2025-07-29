@@ -1245,7 +1245,6 @@
   display: block;
 }
 
-/* Main horizontal row - always flex row, snug to top, no extra padding/margin */
 .cards.cards45 > ul {
   display: flex;
   flex-direction: row;
@@ -1263,7 +1262,6 @@
   scroll-snap-type: x mandatory;
 }
 
-/* Hide scrollbars for cleaner look */
 .cards.cards45 > ul::-webkit-scrollbar {
   height: 6px;
   background: #f6f6f9;
@@ -1274,7 +1272,6 @@
   border-radius: 3px;
 }
 
-/* Responsive horizontal scroll for mobile */
 @media (width <= 900px) {
   .cards.cards45 > ul {
     gap: 14px;
@@ -1282,7 +1279,6 @@
   }
 }
 
-/* Card styling: fixed compact width/height, minimal padding */
 .cards.cards45 > ul > li {
   flex: 0 0 366px;
   max-width: 366px;
@@ -1311,7 +1307,6 @@
   }
 }
 
-/* --- IMAGE FIX: Ensure the image fills and is always visible --- */
 .cards.cards45 .cards-card-image {
   background: none;
   padding: 0;
@@ -1334,7 +1329,6 @@
   background: #e7eaf2;
 }
 
-/* Card body: tightly packed */
 .cards.cards45 .cards-card-body {
   flex: 1 1 auto;
   display: flex;
@@ -1345,7 +1339,6 @@
   min-height: 0;
 }
 
-/* Headline: compact, tight, blue */
 .cards.cards45 .cards-card-body h3 {
   font-size: 15px;
   font-weight: 700;
@@ -1357,7 +1350,6 @@
   word-break: break-word;
 }
 
-/* Summary styling: compact, gray, tight */
 .cards.cards45 .cards-card-body > p:not(:last-child) {
   font-size: 15px;
   line-height: 1.38;
@@ -1367,7 +1359,6 @@
   word-break: break-word;
 }
 
-/* 'Read More' link: compact, underline on hover, blue, inline arrow if present */
 .cards.cards45 .cards-card-body > p a:first-child {
   color: #004ba9;
   font-size: 14px;
@@ -1395,7 +1386,6 @@
   vertical-align: middle;
 }
 
-/* Date styling: muted, tiny, bottom right, subtle */
 .cards.cards45 .cards-card-body > p:last-child {
   font-size: 11px;
   color: #9ba1ad;
@@ -1407,13 +1397,11 @@
   background: none;
 }
 
-/* Remove extra paragraph margin in all card body children */
 .cards.cards45 .cards-card-body > * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Spacing tweaks for headline/summary separation */
 .cards.cards45 .cards-card-body h3 + p {
   margin-top: 2px;
 }
@@ -1422,8 +1410,135 @@
   margin-top: 2px;
 }
 
-/* Badge handling (if present in HTML) */
 .cards.cards45 .cards-card-image > *:first-child {
   position: relative;
   z-index: 1;
+}
+
+
+.cards.cards51 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (width <= 1000px) {
+  .cards.cards51 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards51 > ul {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.cards.cards51 > ul > li {
+  background: #fff;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgb(20 30 80 / 6%);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 0 6px;
+
+  /* Do not set height: 100% to avoid collapse */
+  transition: box-shadow 0.1s;
+}
+
+.cards.cards51 > ul > li:hover {
+  box-shadow: 0 4px 14px rgb(23 62 165 / 12%);
+}
+
+.cards.cards51 .cards-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  min-height: 44px;
+  padding: 0;
+}
+
+.cards.cards51 .cards-card-image img {
+  max-width: 66px;
+  max-height: 66px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cards.cards51 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 0 10px;
+  align-items: flex-start;
+}
+
+.cards.cards51 .cards-card-body h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #173ea5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 2px 0 3px;
+  line-height: 1.18;
+}
+
+.cards.cards51 .cards-card-body p {
+  font-size: 12px;
+  color: #222;
+  font-weight: 400;
+  line-height: 1.36;
+  margin: 0 0 4px;
+}
+
+.cards.cards51 .cards-card-body .button-container {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0;
+}
+
+.cards.cards51 .cards-card-body .button {
+  background: #173ea5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 15px;
+  border-radius: 4px;
+  margin: 4px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: unset;
+  white-space: nowrap;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.cards.cards51 .cards-card-body .button:hover {
+  background: #122e7b;
+  color: #fff;
+}
+
+@media (width <= 700px) {
+  .cards.cards51 .cards-card-body {
+    padding: 0 5px;
+  }
+
+  .cards.cards51 > ul > li {
+    padding-bottom: 8px;
+  }
 }
