@@ -27,104 +27,6 @@
 }
 
 
-.cards.cards28 {
-  background: #f7f7f7;
-  padding: 48px 0;
-}
-
-.cards.cards28 ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1320px;
-}
-
-@media (width <= 1100px) {
-  .cards.cards28 ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 760px;
-  }
-}
-
-@media (width <= 700px) {
-  .cards.cards28 ul {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    max-width: 420px;
-  }
-}
-
-.cards.cards28 ul > li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgb(23 28 143 / 9%);
-  padding: 28px 22px;
-  min-height: 310px;
-  border: none;
-  transition: box-shadow 0.2s;
-}
-
-.cards.cards28 .cards-card-image {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  margin-bottom: 4px;
-  min-height: 48px;
-}
-
-.cards.cards28 .cards-card-image picture,
-.cards.cards28 .cards-card-image img {
-  display: block;
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  margin: 0 auto;
-  background: transparent;
-}
-
-.cards.cards28 .cards-card-body {
-  text-align: center;
-  width: 100%;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cards.cards28 .cards-card-body h3 {
-  font-family: var(--heading-font-family);
-  font-size: 17px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #2323a9;
-  margin: 0 0 6px;
-  letter-spacing: 0.01em;
-  line-height: 1.22;
-  text-align: center;
-}
-
-.cards.cards28 .cards-card-body p {
-  font-size: 14px;
-  font-weight: 400;
-  color: #222;
-  line-height: 1.43;
-  margin: 0;
-  text-align: center;
-  max-width: 68%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 .cards.cards30 {
   padding: 0;
 }
@@ -1371,7 +1273,6 @@
   overflow-x: visible;
 }
 
-/* Use flex for single horizontal row with perfect alignment & stretching */
 .cards.cards19 > ul {
   display: flex;
   flex-direction: row;
@@ -1385,7 +1286,6 @@
   min-width: 0;
 }
 
-/* Only show first, second, and fourth card; hide the third card */
 .cards.cards19 > ul > li {
   flex: 1 1 0;
   min-width: 0;
@@ -1402,17 +1302,14 @@
   justify-content: flex-start;
 }
 
-/* Hide the third card ("Reliable") */
 .cards.cards19 > ul > li:nth-child(3) {
   display: none;
 }
 
-/* Make sure the fourth card is shown */
 .cards.cards19 > ul > li:nth-child(4) {
   display: flex;
 }
 
-/* Icon/image styling */
 .cards.cards19 .cards-card-image {
   display: flex;
   align-items: flex-start;
@@ -1456,7 +1353,6 @@
   font-family: var(--body-font-family);
 }
 
-/* Responsive: stack vertically on small screens */
 @media (width <= 900px) {
   .cards.cards19 {
     padding: 20px 6px;
@@ -1471,4 +1367,123 @@
   .cards.cards19 > ul > li {
     max-width: 100%;
   }
+}
+
+
+.cards.cards28 {
+  background-color: #fff;
+  width: 1170px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.cards.cards28 ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+@media (width <= 1100px) {
+  .cards.cards28 ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards28 ul {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* Card container */
+.cards.cards28 ul > li {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgb(60 60 60 / 8%);
+  border: 1px solid #e5e5e5;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 310px;
+}
+
+/* Center the icon horizontally, but keep text left-aligned */
+.cards.cards28 .cards-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 64px;
+  margin-bottom: 0;
+}
+
+.cards.cards28 .cards-card-image picture,
+.cards.cards28 .cards-card-image img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  background: transparent;
+}
+
+/* Card body vertical stack, left-aligned */
+.cards.cards28 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+
+/* Heading: left, deep blue, bold, decent gap below */
+.cards.cards28 .cards-card-body h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #181C84;
+  margin-top: 0;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* Description: left, a bit more open and clear below heading */
+.cards.cards28 .cards-card-body p {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #19213D;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* Responsive: reduce icon size on small screens */
+@media (width <= 700px) {
+  .cards.cards28 .cards-card-image picture,
+  .cards.cards28 .cards-card-image img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cards.cards28 ul > li {
+    padding: 20px 14px;
+  }
+}
+
+/* Remove accidental margin on last card */
+.cards.cards28 ul > li:last-child {
+  margin-right: 0;
 }
