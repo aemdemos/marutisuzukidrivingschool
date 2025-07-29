@@ -1096,7 +1096,6 @@
   padding: 0;
 }
 
-/* Row layout for horizontal card carousel */
 .cards.cards36 > ul {
   display: flex;
   flex-direction: row;
@@ -1110,7 +1109,6 @@
   scroll-behavior: smooth;
 }
 
-/* Compact, uniform cards */
 .cards.cards36 > ul > li {
   background: #fff;
   border: 1px solid #dee2e6;
@@ -1131,19 +1129,16 @@
   position: relative;
 }
 
-/* All cards same height in a row */
 .cards.cards36 > ul {
   align-items: stretch;
 }
 
-/* Highlight featured card */
 .cards.cards36 > ul > li:nth-child(3) {
   border: 2px solid #264DB5;
   box-shadow: 0 4px 10px rgb(38 77 181 / 7%);
   z-index: 1;
 }
 
-/* Card body: tight stacking, minimal gap */
 .cards.cards36 .cards-card-body {
   margin: 0;
   padding: 0;
@@ -1154,7 +1149,6 @@
   justify-content: flex-start;
 }
 
-/* Image: compact, centered, with aspect ratio */
 .cards.cards36 .cards-card-image {
   width: 100%;
   margin-bottom: 6px;
@@ -1174,7 +1168,6 @@
   border-radius: 6px;
 }
 
-/* Heading and quote: smaller, blue, less margin */
 .cards.cards36 .cards-card-body h3 {
   color: #264DB5;
   font-size: 13px;
@@ -1192,7 +1185,6 @@
   letter-spacing: 0.01em;
 }
 
-/* Testimonial text: compact, no excess margin */
 .cards.cards36 .cards-card-body p {
   font-size: 12px;
   line-height: 15px;
@@ -1202,7 +1194,6 @@
   word-break: break-word;
 }
 
-/* Author: blue, bold, last */
 .cards.cards36 .cards-card-body p > strong {
   color: #264DB5;
   font-size: 12px;
@@ -1211,20 +1202,17 @@
   margin: 1px 0 0;
 }
 
-/* Last p as location/secondary: grey if present */
 .cards.cards36 .cards-card-body p:last-child:not(:only-child, :has(strong)) {
   color: #868e96;
   font-size: 11px;
   margin: 0;
 }
 
-/* Remove any blue divider/bar */
 .cards.cards36 .testimonial-divider,
 .cards.cards36 .blue-bar {
   display: none;
 }
 
-/* Responsive tweaks: cards narrower and text smaller on mobile */
 @media (width <= 900px) {
   .cards.cards36 > ul > li {
     min-width: 128px;
@@ -1245,4 +1233,197 @@
     font-size: 10px;
     line-height: 12px;
   }
+}
+
+
+.cards.cards45 {
+  background: #f6f6f9;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1170px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Main horizontal row - always flex row, snug to top, no extra padding/margin */
+.cards.cards45 > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  overflow: auto visible;
+  width: 100%;
+  min-height: 0;
+  max-width: 1170px;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbars for cleaner look */
+.cards.cards45 > ul::-webkit-scrollbar {
+  height: 6px;
+  background: #f6f6f9;
+}
+
+.cards.cards45 > ul::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+
+/* Responsive horizontal scroll for mobile */
+@media (width <= 900px) {
+  .cards.cards45 > ul {
+    gap: 14px;
+    max-width: 100vw;
+  }
+}
+
+/* Card styling: fixed compact width/height, minimal padding */
+.cards.cards45 > ul > li {
+  flex: 0 0 366px;
+  max-width: 366px;
+  min-width: 366px;
+  min-height: 420px;
+  max-height: 480px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgb(30 42 120 / 8%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  transition: box-shadow 0.2s;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+@media (width <= 1200px) {
+  .cards.cards45 > ul > li {
+    min-width: 80vw;
+    max-width: 80vw;
+    flex: 0 0 80vw;
+  }
+}
+
+/* --- IMAGE FIX: Ensure the image fills and is always visible --- */
+.cards.cards45 .cards-card-image {
+  background: none;
+  padding: 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.cards.cards45 .cards-card-image img {
+  width: 100%;
+  height: 148px;
+  min-height: 148px;
+  max-height: 148px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  display: block;
+  background: #e7eaf2;
+}
+
+/* Card body: tightly packed */
+.cards.cards45 .cards-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  background: none;
+  min-height: 0;
+}
+
+/* Headline: compact, tight, blue */
+.cards.cards45 .cards-card-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #004ba9;
+  margin: 14px 0 7px;
+  line-height: 1.3;
+  padding: 0 16px;
+  min-height: 38px;
+  word-break: break-word;
+}
+
+/* Summary styling: compact, gray, tight */
+.cards.cards45 .cards-card-body > p:not(:last-child) {
+  font-size: 15px;
+  line-height: 1.38;
+  margin: 0 0 6px;
+  color: #222;
+  padding: 0 16px;
+  word-break: break-word;
+}
+
+/* 'Read More' link: compact, underline on hover, blue, inline arrow if present */
+.cards.cards45 .cards-card-body > p a:first-child {
+  color: #004ba9;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  margin: 8px 0 0;
+  padding: 0;
+  transition: text-decoration 0.2s;
+  vertical-align: middle;
+}
+
+.cards.cards45 .cards-card-body > p a:first-child:hover {
+  text-decoration: underline;
+}
+
+.cards.cards45 .cards-card-body > p a + a img,
+.cards.cards45 .cards-card-body > p a img {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* Date styling: muted, tiny, bottom right, subtle */
+.cards.cards45 .cards-card-body > p:last-child {
+  font-size: 11px;
+  color: #9ba1ad;
+  align-self: flex-end;
+  padding: 0 16px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  letter-spacing: 0.01em;
+  background: none;
+}
+
+/* Remove extra paragraph margin in all card body children */
+.cards.cards45 .cards-card-body > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Spacing tweaks for headline/summary separation */
+.cards.cards45 .cards-card-body h3 + p {
+  margin-top: 2px;
+}
+
+.cards.cards45 .cards-card-body > p:not(:last-child, :first-child) {
+  margin-top: 2px;
+}
+
+/* Badge handling (if present in HTML) */
+.cards.cards45 .cards-card-image > *:first-child {
+  position: relative;
+  z-index: 1;
 }
