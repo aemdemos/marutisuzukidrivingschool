@@ -26,17 +26,6 @@
   display: block;
 }
 
-.columns.columns4 {
-  background: #171795;
-  color: #fff;
-  width: 100%;
-  margin: 0;
-  padding: 8px 32px;
-  box-sizing: border-box;
-  position: relative;
-  min-height: 80px;
-}
-
 .columns.columns4 > div {
   display: flex;
   flex-direction: column;
@@ -258,4 +247,224 @@
   .columns.columns4 > div:nth-child(2) {
     margin-top: 10px;
   }
+}
+
+.columns.columns4 {
+  background: #171795;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 80px;
+}
+
+.columns.columns7 {
+  background: #fff;
+  padding: 36px 0;
+}
+
+.columns.columns7 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+@media (width <= 1000px) {
+  .columns.columns7 > div {
+    flex-direction: column;
+    gap: 0;
+  }
+  .columns.columns7 > div > div {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.columns.columns7 > div > div:first-child {
+  flex: 0 1 70%;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.columns.columns7 > div > div:last-child {
+  flex: 0 1 30%;
+  min-width: 320px;
+  max-width: 355px;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+}
+
+.columns.columns7 h1 {
+  color: #3c4eb3;
+  font-size: 2.15rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 22px;
+  line-height: 1.11;
+  font-family: var(--heading-font-family);
+}
+
+.columns.columns7 picture {
+  display: block;
+  margin-bottom: 0;
+}
+
+.columns.columns7 picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  margin-bottom: -8px;
+}
+
+.columns.columns7 table tr:first-child td {
+  display: block;
+  background: #f3f4f6;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #3c4eb3;
+  padding: 20px 30px 20px 24px;
+  margin: 0 0 16px;
+  border-radius: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  top: -5px;
+}
+
+.columns.columns7 p,
+.columns.columns7 td,
+.columns.columns7 li {
+  color: #474747;
+  font-size: 1rem;
+  line-height: 1.82;
+  font-weight: 400;
+  margin-bottom: 0.9em;
+}
+
+.columns.columns7 > div > div:first-child strong {
+  color: #3c4eb3;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.7em;
+  margin-bottom: 0.4em;
+}
+
+.columns.columns7 > div > div:last-child h2 {
+  color: #3c4eb3;
+  font-size: 1.23rem;
+  font-weight: 700;
+  margin-top: 38px;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  background: none;
+}
+
+.columns.columns7 > div > div:last-child > picture {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.columns.columns7 > div > div:last-child > picture + h3,
+.columns.columns7 > div > div:last-child > picture + h3 + p,
+.columns.columns7 > div > div:last-child > picture + h3 + p + .button-container,
+.columns.columns7 > div > div:last-child > picture + h3 + p + .button-container + p {
+  background: #f8f8f8;
+  box-shadow: 0 2px 10px 0 rgb(60 78 179 / 6%);
+  width: 100%;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.columns.columns7 > div > div:last-child > picture + h3 {
+  padding-top: 18px;
+  border-radius: 14px 14px 0 0;
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.22;
+}
+
+.columns.columns7 > div > div:last-child > picture + h3 + p {
+  font-size: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.columns.columns7 > div > div:last-child > picture + h3 + p + .button-container {
+  padding-top: 8px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.columns.columns7 > div > div:last-child > picture + h3 + p + .button-container + p {
+  padding-bottom: 18px;
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 16px;
+  color: #888;
+  font-size: 0.98rem;
+  background: #f8f8f8;
+}
+
+.columns.columns7 > div > div:last-child > picture img {
+  border-radius: 14px 14px 0 0;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+
+.columns.columns7 > div > div:last-child > :last-child {
+  margin-bottom: 0;
+}
+
+.columns.columns7 > div > div:last-child .button {
+  background-color: var(--link-color);
+  color: var(--background-color);
+  border-radius: 2.4em;
+  padding: 0.45em 1.15em;
+  font-size: 1rem;
+  margin: 0;
+  border: 2px solid transparent;
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  line-height: 1.25;
+  box-shadow: none;
+}
+
+.columns.columns7 table {
+  width: 100%;
+  border-collapse: collapse;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns7 td {
+  padding: 0;
+  border: none;
+}
+
+.columns.columns7 ul,
+.columns.columns7 ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.columns.columns7 > div > div:first-child table + table {
+  margin-top: 0;
 }
