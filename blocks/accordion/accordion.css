@@ -127,7 +127,8 @@
   letter-spacing: 0.3px;
 }
 
-.accordion.accordion13 .accordion-item-body {
+.accordion.accordion13 .accordion-item-body,
+.accordion details .accordion-item-body {
   display: block;
   color: #222;
   font-size: 12px;
@@ -169,99 +170,6 @@
     margin-right: 8px;
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-.accordion.accordion10 {
-  border: 1px solid #f6f7fb;
-  border-radius: 0;
-  background: #fff;
-  padding: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: visible;
-}
-
-.accordion.accordion10 details.accordion-item {
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: none;
-}
-
-.accordion.accordion10 summary.accordion-item-label {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 46px;
-  padding: 20px 36px;
-  background: transparent;
-  cursor: pointer;
-  border: none;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.accordion.accordion10 summary.accordion-item-label::-webkit-details-marker,
-.accordion.accordion10 summary.accordion-item-label::marker {
-  display: none;
-}
-
-.accordion.accordion10 summary.accordion-item-label::after {
-  display: block;
-  width: 22px;
-  min-width: 22px;
-  height: 1px;
-  margin-left: 10px;
-}
-
-.accordion.accordion10 summary.accordion-item-label p {
-  color: #1a23b8;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  flex: 1 1 auto;
-  white-space: normal;
-  overflow-wrap: break-word;
-  text-align: left;
-}
-
-.accordion.accordion10 .accordion-item-body {
-  margin: 10px 36px 18px;
-  color: #333;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 0;
-  background: none;
-  border: none;
-  font-weight: 400;
-  display: block;
-}
-
-.accordion.accordion10 .accordion-item-body a {
-  color: #1a23b8;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-@media (width <= 600px) {
-  .accordion.accordion10 summary.accordion-item-label {
-    min-height: 36px;
-    padding: 12px;
-  }
-
-  .accordion.accordion10 summary.accordion-item-label p {
-    font-size: 13px;
-  }
-
-  .accordion.accordion10 .accordion-item-body {
-    margin: 6px 12px 12px;
-    font-size: 12px;
   }
 }
 
@@ -358,29 +266,6 @@
   }
 }
 
-.accordion.accordion13 .accordion-item-body {
-  display: block;
-  color: #222;
-  font-size: 12px;
-  margin: 0 0 8px;
-  line-height: 1.5;
-  padding: 0 32px 16px;
-  background: transparent;
-  border: none;
-}
-
-.accordion.accordion10 .accordion-item-body {
-  margin: 10px 36px 18px;
-  color: #333;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 0;
-  background: none;
-  border: none;
-  font-weight: 400;
-  display: block;
-}
-
 .accordion.accordion21 .accordion-item-body {
   padding: 0 24px;
   background: #fff;
@@ -388,15 +273,6 @@
 
 .accordion details .accordion-item-body {
   padding: 0 16px;
-}
-
-.accordion.accordion13 .accordion-item-body p,
-.accordion.accordion13 .accordion-item-body ul,
-.accordion.accordion13 .accordion-item-body li {
-  color: #222;
-  font-size: 12px;
-  margin: 0 0 8px;
-  line-height: 1.5;
 }
 
 .accordion details[open] .accordion-item-body {
@@ -408,7 +284,6 @@
   border-top: none;
   background: #fff;
 }
-
 
 .accordion.accordion24 {
   background: #fff;
@@ -436,8 +311,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-
-  /* Remove nearly all padding and gap for pixel-perfect tightness */
   padding: 0 1px;
   gap: 0;
   background: transparent;
@@ -485,7 +358,6 @@
   display: none;
 }
 
-/* Arrow: make it as subtle and precise as possible */
 .accordion.accordion24 details summary::after {
   display: inline-block;
   position: absolute;
@@ -530,5 +402,116 @@
   .accordion.accordion24 .accordion-item-body {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+.accordion.accordion10 {
+  background: #fff;
+  border: 1px solid #f5f6fa;
+  border-radius: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.accordion.accordion10 summary.accordion-item-label::after,
+.accordion.accordion10 details > summary.accordion-item-label::after {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  margin-left: 14px;
+  background: #1428d0;
+  border: none;
+  border-radius: 2px;
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+  transform: none;
+  box-shadow: none;
+  border-width: 0;
+  border-style: none;
+}
+
+.accordion.accordion10 summary.accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+  padding: 9px 18px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.accordion.accordion10 summary.accordion-item-label::-webkit-details-marker,
+.accordion.accordion10 summary.accordion-item-label::marker {
+  display: none;
+}
+
+.accordion.accordion10 summary.accordion-item-label p {
+  color: #1428d0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  flex: 1 1 auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+  align-self: center;
+}
+
+.accordion.accordion10 .accordion-item-body {
+  margin: 7px 18px;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 0;
+  background: none;
+  border: none;
+  font-weight: 400;
+  display: block;
+}
+
+.accordion.accordion10 .accordion-item-body a {
+  color: #1428d0;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.accordion.accordion10 details[open] .accordion-item-body {
+  border: none;
+  background: none;
+}
+
+@media (width <= 600px) {
+  .accordion.accordion10 summary.accordion-item-label {
+    min-height: 24px;
+    padding: 6px 8px;
+  }
+
+  .accordion.accordion10 summary.accordion-item-label::after,
+  .accordion.accordion10 details > summary.accordion-item-label::after {
+    width: 16px;
+    height: 2px;
+    margin-left: 8px;
+    top: 1px;
+  }
+
+  .accordion.accordion10 summary.accordion-item-label p {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .accordion.accordion10 .accordion-item-body {
+    margin: 4px 8px;
+    font-size: 12px;
   }
 }
