@@ -50,132 +50,162 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgb(23 28 143 / 6%);
   max-width: 1200px;
-  margin: 0 auto 48px;
-  padding: 40px;
-  box-sizing: border-box;
-  gap: 48px;
-  min-height: 340px;
-}
-
-.hero.hero6 > div:first-child {
-  flex: 1 1 46%;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  min-width: 320px;
-  max-width: 520px;
-  background: #e4e7ef;
-  border-radius: 12px;
-  overflow: hidden;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(35 64 142 / 6%);
   padding: 0;
+  min-height: 390px;
+  overflow: visible;
 }
 
+/* Left (image) column */
+.hero.hero6 > div:first-child {
+  flex: 0 1 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0 32px 32px;
+  min-width: 340px;
+  max-width: 48%;
+  box-sizing: border-box;
+  position: relative;
+
+  /* visual placeholder if image fails */
+  background: #e4e7ef;
+}
+
+/* Right (text) column */
 .hero.hero6 > div:last-child {
-  flex: 1 1 54%;
+  flex: 0 1 55%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  max-width: 600px;
-  margin-left: 0;
-  padding-top: 6px;
+  max-width: 56%;
+  padding: 40px 40px 40px 36px;
+  box-sizing: border-box;
 }
 
+/* Ensure the inner image container fills height */
 .hero.hero6 > div:first-child > div {
   width: 100%;
+  height: 100%;
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero.hero6 picture,
-.hero.hero6 img {
+.hero.hero6 > div:last-child > div {
   width: 100%;
-  height: 100%;
-  min-height: 220px;
-  aspect-ratio: 2.45/1;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  background: #e4e7ef;
-  box-shadow: 0 2px 8px rgb(23 28 143 / 8%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0;
 }
 
 .hero.hero6 h1 {
-  color: #171c8f;
-  font-size: 2rem;
+  color: #23408e;
+  font-size: 2.1rem;
   font-weight: 700;
-  margin: 0 0 18px;
-  line-height: 1.18;
-  letter-spacing: -0.5px;
+  line-height: 1.16;
+  margin: 0 0 20px;
+  font-family: Roboto, sans-serif;
 }
 
-.hero.hero6 p,
-.hero.hero6 ul,
-.hero.hero6 ol {
+.hero.hero6 p {
   color: #222;
-  font-size: 1rem;
-  margin-bottom: 0.9em;
-  line-height: 1.6;
+  font-size: 1.19rem;
+  line-height: 1.82;
+  margin: 0 0 1.6em;
+  font-family: Roboto, sans-serif;
 }
 
 .hero.hero6 strong {
-  color: #131313;
+  color: #23408e;
   font-weight: 700;
 }
 
-@media (width <= 1020px) {
+.hero.hero6 em {
+  color: #666;
+  font-style: italic;
+}
+
+.hero.hero6 a {
+  color: #23408e;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.hero.hero6 a:hover {
+  color: #1c326b;
+}
+
+/* Image styles */
+.hero.hero6 picture,
+.hero.hero6 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-height: 200px;
+  aspect-ratio: 2.45/1;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e4e7ef;
+  box-shadow: 0 2px 8px rgb(35 64 142 / 9%);
+}
+
+/* Responsive adjustments */
+@media (width <= 1150px) {
   .hero.hero6 {
-    padding: 28px 6vw;
-    gap: 24px;
+    max-width: 99vw;
   }
 
   .hero.hero6 > div:first-child {
-    min-width: 0;
-    max-width: 400px;
+    min-width: 240px;
+    padding-left: 16px;
   }
 
   .hero.hero6 > div:last-child {
-    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 22px;
   }
 }
 
-@media (width <= 700px) {
+@media (width <= 820px) {
   .hero.hero6 {
     flex-direction: column;
-    gap: 20px;
-    padding: 14px 2vw;
+    max-width: 99vw;
     min-height: unset;
+    padding: 0;
   }
 
   .hero.hero6 > div:first-child,
   .hero.hero6 > div:last-child {
     max-width: 100%;
     min-width: 0;
-    padding: 0;
+    padding: 18px 8px 0;
   }
 
-  .hero.hero6 > div:first-child {
-    min-height: 140px;
-    border-radius: 10px;
+  .hero.hero6 > div:last-child {
+    padding-bottom: 24px;
+    padding-top: 10px;
+  }
+
+  .hero.hero6 h1 {
+    font-size: 1.15rem;
+  }
+
+  .hero.hero6 p {
+    font-size: 1rem;
   }
 
   .hero.hero6 picture,
   .hero.hero6 img {
-    min-height: 140px;
-    border-radius: 10px;
     aspect-ratio: 16/7;
+    min-height: 120px;
   }
-}
-
-.hero.hero6 *,
-.hero.hero6 img {
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
 }
