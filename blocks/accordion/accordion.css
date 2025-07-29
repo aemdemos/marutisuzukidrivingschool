@@ -172,96 +172,6 @@
   }
 }
 
-.accordion.accordion24 {
-  margin: 44px 0;
-}
-
-.accordion.accordion24 details {
-  border: none;
-  margin: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.accordion.accordion24 details + details {
-  margin-top: 48px;
-}
-
-.accordion.accordion24 .accordion-item-label {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 32px 72px;
-  min-height: 76px;
-  background: transparent;
-  list-style: none;
-  gap: 12px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.accordion.accordion24 .accordion-item-label:focus,
-.accordion.accordion24 .accordion-item-label:hover {
-  background: transparent;
-}
-
-.accordion.accordion24 .accordion-item-label::-webkit-details-marker {
-  display: none;
-}
-
-.accordion.accordion24 .accordion-item-label p {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #222A45;
-  text-transform: uppercase;
-  margin: 0;
-  flex: 1 1 auto;
-  line-height: 1.7;
-  text-align: left;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.accordion.accordion24 details[open] .accordion-item-label {
-  background: transparent;
-}
-
-.accordion.accordion24 .accordion-item-body {
-  padding: 0 72px 32px;
-  margin: 0;
-  border: none;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.accordion.accordion24 .accordion-item-body p {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 15px;
-  color: #5B5B5B;
-  line-height: 1.7;
-  margin: 0;
-  padding: 0;
-}
-
-@media (width <= 900px) {
-  .accordion.accordion24 .accordion-item-label,
-  .accordion.accordion24 .accordion-item-body {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .accordion.accordion24 .accordion-item-label {
-    min-height: 56px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-}
-
 .accordion.accordion10 {
   border: 1px solid #f6f7fb;
   border-radius: 0;
@@ -366,7 +276,6 @@
   margin: 0 auto 0 0;
 }
 
-/* Use flex for crisp left/right alignment and marker control */
 .accordion.accordion21 summary.accordion-item-label {
   display: flex;
   flex-direction: row;
@@ -387,7 +296,6 @@
   z-index: 1;
 }
 
-/* Hide only the marker, do not remove its width (prevents layout jump) */
 .accordion.accordion21 summary.accordion-item-label::-webkit-details-marker {
   color: transparent;
   background: transparent;
@@ -404,7 +312,6 @@
   margin-left: 8px;
 }
 
-/* Ensure header text is left-aligned, bold, and blue */
 .accordion.accordion21 summary.accordion-item-label p {
   font-size: 30px;
   font-weight: bold;
@@ -420,7 +327,6 @@
   align-self: center;
 }
 
-/* Place any icon or marker (the chevron or plus, if present in the DOM) at the end */
 .accordion.accordion21 summary.accordion-item-label span,
 .accordion.accordion21 summary.accordion-item-label .header-plus {
   display: inline-block;
@@ -434,7 +340,6 @@
   align-self: center;
 }
 
-/* Responsive: Adjust spacing and font size on small screens */
 @media (width <= 600px) {
   .accordion.accordion21 {
     max-width: 100%;
@@ -462,14 +367,6 @@
   padding: 0 32px 16px;
   background: transparent;
   border: none;
-}
-
-.accordion.accordion24 .accordion-item-body {
-  padding: 0 72px 32px;
-  margin: 0;
-  border: none;
-  background: transparent;
-  box-sizing: border-box;
 }
 
 .accordion.accordion10 .accordion-item-body {
@@ -510,4 +407,128 @@
 .accordion.accordion21 details[open] .accordion-item-body {
   border-top: none;
   background: #fff;
+}
+
+
+.accordion.accordion24 {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+
+.accordion.accordion24 details {
+  border: none;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+}
+
+.accordion.accordion24 details + details {
+  margin-top: 0;
+}
+
+.accordion.accordion24 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* Remove nearly all padding and gap for pixel-perfect tightness */
+  padding: 0 1px;
+  gap: 0;
+  background: transparent;
+  width: 100%;
+  min-height: 16px;
+  box-sizing: border-box;
+}
+
+.accordion.accordion24 .accordion-item-label p {
+  color: #233976;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  flex: 1 1 auto;
+  line-height: 1.1;
+  text-align: left;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.accordion.accordion24 details summary {
+  position: relative;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  border: none;
+  list-style: none;
+  min-height: unset;
+  transition: none;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.accordion.accordion24 details summary::-webkit-details-marker,
+.accordion.accordion24 .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion24 details summary::marker,
+.accordion.accordion24 .accordion-item-label::marker {
+  display: none;
+}
+
+/* Arrow: make it as subtle and precise as possible */
+.accordion.accordion24 details summary::after {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border: solid #2d2d2d;
+  border-width: 0 1px 1px 0;
+  border-radius: 0;
+  background: none;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.accordion.accordion24 details[open] summary::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.accordion.accordion24 .accordion-item-body {
+  padding: 2px 1px 3px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.accordion.accordion24 .accordion-item-body p {
+  color: #5b5b5b;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+@media (width <= 600px) {
+  .accordion.accordion24 .accordion-item-label,
+  .accordion.accordion24 .accordion-item-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
